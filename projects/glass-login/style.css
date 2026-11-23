@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background: #090b18;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 20%, #161c43, transparent 50%),
+        radial-gradient(circle at 80% 80%, #24113c, transparent 50%),
+        #090b18;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.6;
+    animation: float 8s infinite alternate ease-in-out;
+}
+
+.orb1 {
+    width: 300px;
+    height: 300px;
+    background: #6554ff;
+    top: 10%;
+    left: 10%;
+}
+
+.orb2 {
+    width: 350px;
+    height: 350px;
+    background: #a23aff;
+    bottom: 5%;
+    right: 10%;
+    animation-delay: -3s;
+}
+
+.orb3 {
+    width: 200px;
+    height: 200px;
+    background: #00b8ff;
+    top: 50%;
+    left: 60%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(40px, -30px);
+    }
+}
+
+/* Layout */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Glass card */
+
+.glass-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+
+    border-radius: 16px;
+    font-size: 27px;
+    color: white;
+
+    background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#subtitle {
+    text-align: center;
+    color: #aaaec5;
+    font-size: 13px;
+    margin-bottom: 28px;
+}
+
+/* Tabs */
+
+.tabs {
+    display: flex;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.tab {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 9px;
+    cursor: pointer;
+
+    color: #aaa;
+    background: transparent;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: rgba(255, 255, 255, 0.13);
+    color: white;
+}
+
+/* Input fields */
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+    font-size: 13px;
+    color: #c6c8d8;
+    margin-bottom: 8px;
+}
+
+.field input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.field input::placeholder {
+    color: #777c96;
+}
+
+.field input:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+}
+
+/* Password */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 45px;
+}
+
+.eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+/* Forgot password */
+
+.forgot {
+    text-align: right;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.forgot a {
+    color: #a78bfa;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/* Submit */
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 11px;
+
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.message {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 15px;
+    color: #c4b5fd;
+    min-height: 18px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 11px;
+    color: #777c96;
+}
+
+/* Hidden fields */
+
+.hidden {
+    display: none !important;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 28px 22px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
