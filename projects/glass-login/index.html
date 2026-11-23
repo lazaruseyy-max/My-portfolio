@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <main class="container">
+
+        <div class="glass-card">
+
+            <div class="logo">✦</div>
+
+            <h1 id="title">Welcome Back</h1>
+            <p id="subtitle">Sign in to continue your journey</p>
+
+            <div class="tabs">
+                <button class="tab active" id="signinTab">Sign In</button>
+                <button class="tab" id="signupTab">Sign Up</button>
+            </div>
+
+            <form id="authForm">
+
+                <div class="field" id="nameField">
+                    <label>Username</label>
+                    <input type="text" id="username"
+                           placeholder="Enter your username">
+                </div>
+
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="name@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label>Password</label>
+
+                    <div class="password-box">
+                        <input type="password" id="password"
+                               placeholder="Enter your password" required>
+
+                        <button type="button" class="eye"
+                                onclick="togglePassword('password')">
+                            👁
+                        </button>
+                    </div>
+                </div>
+
+                <div class="field" id="confirmField">
+                    <label>Confirm Password</label>
+
+                    <div class="password-box">
+                        <input type="password" id="confirmPassword"
+                               placeholder="Confirm your password">
+
+                        <button type="button" class="eye"
+                                onclick="togglePassword('confirmPassword')">
+                            👁
+                        </button>
+                    </div>
+                </div>
+
+                <div class="forgot" id="forgot">
+                    <a href="#" onclick="forgotPassword(event)">
+                        Forgot password?
+                    </a>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Sign In
+                </button>
+
+            </form>
+
+            <p class="message" id="message"></p>
+
+            <div class="footer">
+                Protected by design · Made with ✦
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
